@@ -1,5 +1,5 @@
-const API_BASE_URL = 'http://localhost:5000/api/jobs';
-
+//const API_BASE_URL = 'http://localhost:5000/api/jobs';
+const API_BASE_URL = 'https://renewable-energy-jobs-api.onrender.com/api/jobs';
 class ApiService {
   async fetchSectors() {
     try {
