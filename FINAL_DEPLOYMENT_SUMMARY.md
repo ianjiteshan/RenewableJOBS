@@ -4,8 +4,8 @@
 ### ✅ **SUCCESSFULLY DEPLOYED & TESTED**
 
 **🌐 LIVE APPLICATION URLS:**
-- **Frontend (Production)**: https://zxjvecgj.manus.space
-- **Backend API**: https://60h5imc0kejy.manus.space
+- **Frontend (Production)**: [VercelAPP](https://renewable-jobs.vercel.app/)
+- **Backend API**: [RenderSERVICE](https://renewable-jobs-backend.onrender.com)
 
 ### 🚀 **FEATURES CONFIRMED WORKING**
 
