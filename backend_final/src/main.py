@@ -283,11 +283,10 @@ if __name__ == '__main__':
     print("Starting Renewable Energy Jobs API...")
     if load_data():
         print("Data loaded successfully!")
-        app.run(host='0.0.0.0', port=5000, debug=False)
+        port = int(os.environ.get("PORT", 5000))  # Use Render/Railway's port if available
+        app.run(host='0.0.0.0', port=port, debug=False)
     else:
         print("Failed to load data. Exiting.")
 
-
 # Load data when module is imported
 load_data()
-
