@@ -120,10 +120,33 @@ function App() {
         apiService.fetchSectors(),
         apiService.fetchYears()
       ])
-      setSectors(sectorsResponse.sectors)
+      
+      // Define the desired sector order
+      const sectorOrder = ['Solar', 'Wind', 'Hydroelectric', 'Geothermal', 'Biomass']
+      
+      // Sort sectors according to the defined order
+      const orderedSectors = sectorsResponse.sectors.sort((a, b) => {
+        const indexA = sectorOrder.indexOf(a)
+        const indexB = sectorOrder.indexOf(b)
+        
+        // If both sectors are in the order array, sort by their position
+        if (indexA !== -1 && indexB !== -1) {
+          return indexA - indexB
+        }
+        // If only one is in the order array, prioritize it
+        if (indexA !== -1) return -1
+        if (indexB !== -1) return 1
+        // If neither is in the order array, sort alphabetically
+        return a.localeCompare(b)
+      })
+      
+      setSectors(orderedSectors)
       setYears(yearsResponse.years)
-      if (sectorsResponse.sectors.length > 0) {
-        setSelectedSector(sectorsResponse.sectors[0])
+      
+      // Set Solar as default if available, otherwise use first sector
+      const defaultSector = orderedSectors.includes('Solar') ? 'Solar' : orderedSectors[0]
+      if (defaultSector) {
+        setSelectedSector(defaultSector)
       }
     } catch (err) {
       setError('Failed to load initial data')
@@ -557,7 +580,7 @@ function App() {
                   <div>
                     <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Accuracy</p>
                     <p className="text-2xl font-bold text-orange-600">
-                      {(100 - insights.average_estimation_deviation).toFixed(1)}%
+                      {insights.accuracy_percentage?.toFixed(1)}%
                     </p>
                   </div>
                   <Activity className="h-8 w-8 text-orange-500" />
@@ -685,9 +708,9 @@ function App() {
                           <div className="space-y-2">
                             <div className="flex justify-between text-sm">
                               <span>Prediction Accuracy</span>
-                              <span className="font-medium">{(100 - insights.average_estimation_deviation).toFixed(1)}%</span>
+                              <span className="font-medium">{insights.accuracy_percentage?.toFixed(1)}%</span>
                             </div>
-                            <Progress value={100 - insights.average_estimation_deviation} className="h-2" />
+                            <Progress value={insights.accuracy_percentage} className="h-2" />
                           </div>
                           
                           <Separator />

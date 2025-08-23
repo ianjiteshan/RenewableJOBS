@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://60h5imc0kejy.manus.space/api/jobs';
+const API_BASE_URL = 'http://localhost:5000/api/jobs';
 
 class ApiService {
   async fetchSectors() {
