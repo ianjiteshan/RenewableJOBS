@@ -11,8 +11,8 @@ A visually stunning, full-stack web application for tracking, visualizing, and p
 
 Experience the live application and interact with the backend API:
 
--   **Frontend URL**: **https://mreypldq.manus.space**
--   **Backend API URL**: **https://5001-i8q1z7jyjaqpx200e8dy0-70d7cdc6.manusvm.computer**
+-   **[Frontend URL](https://renewable-jobs.vercel.app/)**
+
 
 ***
 
