@@ -944,6 +944,16 @@ function App() {
           )}
         </AnimatePresence>
       </main>
+       {/* Footer */}
+      <footer className="container mx-auto px-6 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          Built with ❤️ for a sustainable future - Anjitesh Shandilya
+        </motion.div>
+      </footer>
     </div>
   )
 }
