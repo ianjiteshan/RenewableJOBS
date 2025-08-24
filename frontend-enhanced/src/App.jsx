@@ -951,7 +951,7 @@ function App() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          Built with ❤️ for a sustainable future - Anjitesh Shandilya
+          Built With ❤️ For A Sustainable Future - Anjitesh Shandilya
         </motion.div>
       </footer>
     </div>
